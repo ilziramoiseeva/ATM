@@ -4,31 +4,26 @@ public class ATM {
     private int result;
     private int maxDeposit;
 
-    public ATM(int initialSum,int deposit,int maxDeposit) {
+    public ATM(int initialSum,int maxDeposit) {
         this.initialSum = initialSum;
-        this.deposit=deposit;
         this.maxDeposit=maxDeposit;
     }
 
-    public int putMoney(){
+    public int putMoney(int deposit){
         if(deposit==0){
-            System.out.println("Внесите сумму");
             return 0;
         }
         result=initialSum+deposit;
         return result;
     }
-    public int withdrawMoney(){
+    public int withdrawMoney(int deposit){
         if(initialSum<deposit){
-            System.out.println("Недостаточно средств");
             return 0;
         }
         if(deposit==0){
-            System.out.println("Введите сумму");
             return 0;
         }
         if(deposit>maxDeposit){
-            System.out.println("В банкомате недостаточно средств");
             return 0;
         }
         result=initialSum-deposit;
